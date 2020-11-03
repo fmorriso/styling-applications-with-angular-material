@@ -17,20 +17,20 @@ export class MainContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      let id = params['id'];
-      if (!id) id = 1;
+      let id = params.id;
+      if (!id) { id = 1; }
       this.user = null;
 
       this.service.users.subscribe(users => {
-        if (users.length == 0) return;
+        if (users.length === 0) { return; }
 
         setTimeout(() => {
           this.user = this.service.userById(id);
-        }, 500)
+        }, 500);
 
       });
 
-    })
+    });
   }
 
 }
