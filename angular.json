@@ -23,6 +23,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "progress": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -125,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "angularmaterial"
+  "defaultProject": "angularmaterial",
+  "cli": {
+    "analytics": "eaaf3c6a-252c-421f-8dac-e877aa2015e3"
+  }
 }
