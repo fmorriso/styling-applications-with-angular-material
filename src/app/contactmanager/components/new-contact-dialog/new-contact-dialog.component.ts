@@ -22,7 +22,7 @@ export class NewContactDialogComponent implements OnInit {
 
   name = new FormControl('', [Validators.required]);
 
-  getErrorMessage() {
+  getErrorMessage(): string {
     return this.name.hasError('required') ? 'You must enter a name' : '';
   }
 
@@ -30,16 +30,16 @@ export class NewContactDialogComponent implements OnInit {
     this.user = new User();
   }
 
-  save() {
+  save(): void {
     this.user.name = this.name.value;
 
     this.userService.addUser(this.user).then(user => {
       this.dialogRef.close(user);
     });
-    
+
   }
 
-  dismiss() {
+  dismiss(): void {
     this.dialogRef.close(null);
   }
 
